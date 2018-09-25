@@ -1,12 +1,12 @@
 /*============================================================================
     Validation Mailer Module
  ============================================================================*/
-
+let secrets;
 const nodemailer = require('nodemailer');
 try {
-    var secrets = require('./secrets/secrets.js');
+    secrets = require('./secrets/secrets.js');
 } catch (e) {
-    var secrets = null;
+    secrets = null;
 }
 // var fs = require("fs");
 
@@ -54,7 +54,7 @@ function send_report(body, subject, callback){
     let mailOptions = {
         from: process.env.EMAIL_SMTP_SENDER || secrets.EMAIL_SMTP_SENDER, // sender address
         to: process.env.EMAIL_RECEIVER || secrets.EMAIL_RECEIVER, // list of receivers
-        subject: "Abalobi Validation Report - " + subject, // Subject line
+        subject: "Abalobi Validation Report - " + subject + " (Older)", // Subject line
         text: body
     };
 
