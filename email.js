@@ -4,9 +4,9 @@
 
 const nodemailer = require('nodemailer');
 try {
-    let secrets = require('./secrets/secrets.js');
+    var secrets = require('./secrets/secrets.js');
 } catch (e) {
-    let secrets = null;
+    var secrets = null;
 }
 // var fs = require("fs");
 
