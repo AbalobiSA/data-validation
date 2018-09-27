@@ -3,9 +3,9 @@
  */
 let jsforce = require('jsforce');
 try {
-    let secrets = require('./secrets/secrets.js');
+    var secrets = require('./secrets/secrets.js');
 } catch (e) {
-    let secrets = null;
+    var secrets = null;
 }
 
 function createQuery(queryString, success, error){
